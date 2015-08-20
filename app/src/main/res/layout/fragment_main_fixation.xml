@@ -1,21 +1,35 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainFixationFragment">
+    android:layout_height="match_parent"
+    tools:context=".MainFixationFragment"
+    android:id="@+id/main_layout">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView" />
-
-    <ImageView
+    <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mainfixationviewer"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:src="@drawable/dinosaur" />
+        android:text="Sound"
+        android:id="@+id/sound_switch"
+        android:checked="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/main_container">
+
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="com.eyetools.pediatrics.pediatricfixation.MainViewPager"
+            android:id="@+id/viewpager"
+            android:isScrollContainer="false"
+            android:layout_weight="1" />
+
+    </LinearLayout>
 
 </RelativeLayout>

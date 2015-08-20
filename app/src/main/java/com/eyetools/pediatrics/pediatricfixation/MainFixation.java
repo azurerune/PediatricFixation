@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainFixation extends ActionBarActivity {
@@ -30,7 +31,12 @@ public class MainFixation extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_about) {
+            Toast.makeText(this, "This is the about message", Toast.LENGTH_LONG).show();
+            return true;
+        } else if (id == R.id.action_upgrade) {
+            return true;
+        } else if (id == R.id.action_sitelicense) {
             return true;
         }
 
