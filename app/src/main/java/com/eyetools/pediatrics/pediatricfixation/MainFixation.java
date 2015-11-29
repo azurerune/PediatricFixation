@@ -1,13 +1,18 @@
 package com.eyetools.pediatrics.pediatricfixation;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 
 public class MainFixation extends ActionBarActivity {
+    static String TAG = "PediatricFixation";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +34,43 @@ public class MainFixation extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Log.d(TAG, "onOptionsMenu");
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_about) {
-            Toast.makeText(this, "This is the about message", Toast.LENGTH_LONG).show();
+            showAbout();
             return true;
         } else if (id == R.id.action_upgrade) {
-            return true;
-        } else if (id == R.id.action_sitelicense) {
+            showSupport();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void showAbout() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        LayoutInflater inflater = getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.layout_about, null));
+        builder.setPositiveButton("Close", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // do nothing
+            }
+        });
+        builder.setNeutralButton("Support PF...", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // show support dialog and close
+                dialog.dismiss();
+                showSupport();
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    public void showSupport() {
+
     }
 }

@@ -5,6 +5,4 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_upgrade" android:title="@string/action_upgrade"
         android:orderInCategory="101" app:showAsAction="never" />
-    <item android:id="@+id/action_sitelicense" android:title="@string/action_sitelicense"
-        android:orderInCategory="102" app:showAsAction="never" />
 </menu>

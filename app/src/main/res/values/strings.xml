@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Pediatric Fixation</string>
     <string name="action_about">About</string>
-    <string name="action_upgrade">Upgrade</string>
+    <string name="action_upgrade">Support Pediatric Fixation</string>
     <string name="action_sitelicense">Site license...</string>
+    <string name="title_activity_test">TestActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
 </resources>

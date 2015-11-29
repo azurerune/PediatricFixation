@@ -2,7 +2,26 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainFixationFragment"
-    android:id="@+id/main_layout">
+    android:id="@+id/main_layout"
+    android:background="#ffffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:id="@+id/webviewcontainer">
+
+        <WebView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/gifwebview" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/touchpanel"></RelativeLayout>
 
     <Switch
         android:layout_width="wrap_content"
@@ -16,20 +35,16 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true" />
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/main_container">
-
-        <view
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            class="com.eyetools.pediatrics.pediatricfixation.MainViewPager"
-            android:id="@+id/viewpager"
-            android:isScrollContainer="false"
-            android:layout_weight="1" />
-
-    </LinearLayout>
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/near_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:textOff="Near"
+        android:textOn="Near"
+        android:checked="false" />
 
 </RelativeLayout>
